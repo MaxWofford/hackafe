@@ -5,10 +5,12 @@ h3,
 h4,
 h5,
 span,
-p {
+p,
+a {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	text-shadow: 0px 1px 1px #4d4d4d;
 	background: inherit;
+	text-decoration: none;
 }
 .content {
 	margin: 0px;
@@ -20,6 +22,9 @@ p {
 	text-decoration: none;
 	height: auto;
 }
+button:hover {
+	text-decoration: none;
+}
 .button h1 {
 	margin: 0px;
 }
@@ -28,6 +33,7 @@ p {
 	height: auto;
 	background: red;
 	color: white;
+	overflow: auto;
 }
 .bottom-button {
 	width: 100%;
@@ -35,12 +41,10 @@ p {
 	background: white;
 	color: red;
 }
-.mark-img {
-	min-width: 3em; 
+.index-img {
+	width: 3em; 
 	height: auto;
-	background-image: url(../img/temp.gif);
-	background-size: 100% auto;
-}
-.find-img {
-	background-image: url(../img/temp.gif);
+	height: auto;
+	display: block;
+	background: inherit;
 }

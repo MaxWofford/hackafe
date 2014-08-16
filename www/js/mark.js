@@ -12,6 +12,7 @@ function success(pos) {
   console.log('Latitude : ' + crd.latitude);
   console.log('Longitude: ' + crd.longitude);
   console.log('More or less ' + crd.accuracy + ' meters.');
+  $('#notification').removeClass('hidden').addClass('alert-success').text('Ready to mark at ' + crd.latitude + ', ' + crd.longitude);
 };
 
 function error(err) {
@@ -31,5 +32,5 @@ function findLocation() {
 
 
 function clearNotification() {
-	$('#notification').addClass('hidden').text('');
+	$('#notification').addClass('hidden').removeClass('alert-danger alert-warning alert-info alert-success').text('');
 }

@@ -1,7 +1,5 @@
 // Initialization stuff
-var fb = new Firebase("https://hackafe.firebaseio.com");
-var latitude = 0;
-var longitude = 0;
+var fb = new Firebase("https://hackafe.firebaseio.com/submit/cafe/");
 var options = {
   enableHighAccuracy: true,
   timeout: 5000,
@@ -10,11 +8,11 @@ var options = {
 
 function success(pos) {
   var crd = pos.coords;
-  var latitude = crd.latitude;
-  var longitude = crd.longitude;
+  latitude = crd.latitude;
+  longitude = crd.longitude;
   console.log('Your current position is:');
-  console.log('Latitude : ' + crd.latitude);
-  console.log('Longitude: ' + crd.longitude);
+  console.log('Latitude : ' + latitude);
+  console.log('Longitude: ' + longitude);
   console.log('More or less ' + crd.accuracy + ' meters.');
   $('#notification').removeClass('hidden').addClass('alert-success').text('Ready to mark at ' + crd.latitude + ', ' + crd.longitude);
 };
@@ -34,13 +32,14 @@ function findLocation() {
   };
 };
 
-function submitLocation(pos) {
-  var name = $('nameInput').val()
-  var comments = $('commentInput').val()
-  if (latitude = 0 && longitude = 0) {
-    $('#notification').removeClass('hidden').text('ERROR: Latitude and Longitude = 0');
+function submitLocation(latitude, longitude) {
+  name = $('#nameInput').val();
+  comments = $('#commentInput').val();
+  console.log(latitude);
+  if (longitude = latitude) {
+    $('#notification').removeClass('hidden').addClass('ERROR: Longitude and latitude = 0');
   } else{
-    fb.set({lat: latitude, long: longitude, name: name, comments: comments});
+    fb.push({name: name, comments: comments, lat: latitude, long: longitude});
   };
 };
 

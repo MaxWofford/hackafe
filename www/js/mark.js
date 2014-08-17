@@ -7,6 +7,7 @@ var options = {
 };
 
 function success(pos) {
+  console.log('finding location')
   var crd = pos.coords;
   latitude = crd.latitude;
   longitude = crd.longitude;
@@ -32,11 +33,13 @@ function findLocation() {
   };
 };
 
-function submitLocation(latitude, longitude) {
+function submitLocation() {
   name = $('#nameInput').val();
   comments = $('#commentInput').val();
-  console.log(latitude);
-  if (longitude = latitude) {
+  console.log('Before findLocation');
+  findLocation();
+  console.log('After findLocation');
+  if (latitude == longitude) {
     $('#notification').removeClass('hidden').addClass('ERROR: Longitude and latitude = 0');
   } else{
     fb.push({name: name, comments: comments, lat: latitude, long: longitude});

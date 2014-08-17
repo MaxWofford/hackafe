@@ -12,9 +12,13 @@ a {
 	background: inherit;
 	text-decoration: none;
 }
+html, body {
+	height: 100%;
+}
 .content {
 	margin: 0px;
 	padding: 0px;
+	height: 100%;
 }
 /*Basic styles for all pages*/
 .button {
@@ -28,32 +32,19 @@ button:hover {
 .button h1 {
 	margin: 0px;
 }
-.top-button {
-	width: 100%;
-	height: auto;
-	background: red;
-	color: white;
-	overflow: auto;
-}
-.bottom-button {
-	width: 100%;
-	height: auto;
-	background: white;
-	color: red;
-}
 .index-img {
-	width: 15rem; 
-	height: auto;
+	width: 25%; 
 	height: auto;
 	display: block;
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+	top: 25%;
+	position: relative;
 }
 .white-bg {
 	background-image: url(../img/WhiteBackground.png);
-	background-repeat: no-repeat;
 	background-size: 100% auto;
+	height: 50%;
 }
 .red-bg {
 	background: red;
+	height: 50%;
 }

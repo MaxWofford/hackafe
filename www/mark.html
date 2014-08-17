@@ -8,20 +8,21 @@
 	</head>
 	<body onLoad="findLocation();">
 		<div class="content">
-			<img src="img/geo-placed.svg" class="center-block index-img">
-			<input type="text">
-			<a onClick="findLocation();">Submit</a>
-			<div id="notification" onClick="clearNotification();" class="alert">You shouldn't see this message!</div>
-			<h1>Optional info</h1>
-			<form>
-				<p>Scale:</p>
-				<input type="checkbox"><span>Free Wifi</span>
-				<input type="checkbox"><span>Free power</span>
-				<input type="checkbox"><span>Beanbags</span>
-				<input type="checkbox"><span>Good food</span>
-				<p>Comments:</p>
-				<textarea></textarea>
-			</form>
+			<div class="fluid-container white-bg">
+				<img src="img/Submit.png" class="center-block index-img">
+			</div>
+			<div class="fluid-container red-bg">
+				<input type="text">
+				<a onClick="submitLocation();">Submit</a>
+				<div id="notification" onClick="clearNotification();" class="alert">You shouldn't see this message!</div>
+				<h1>Optional info</h1>
+				<form>
+					<p>Scale:</p>
+					<input id="nameInput" type="text" placeholder="Sam's Cafe">
+					<p>Comments:</p>
+					<input id="commentInput" type="text" placeholder="Great wifi">
+				</form>
+			</div>
 		</div>
 		<script src="js/jquery-2.1.1.min.js"></script>
 		<script src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>

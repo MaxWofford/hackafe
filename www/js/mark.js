@@ -1,5 +1,5 @@
 // Initialization stuff
-var fb = new Firebase("https://hackafe.firebaseio.com/submit/cafe/");
+var fb = new Firebase("https://hackafe.firebaseio.com/submit/");
 var options = {
   enableHighAccuracy: true,
   timeout: 5000,

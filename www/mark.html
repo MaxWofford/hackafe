@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -8,21 +9,33 @@
 	</head>
 	<body onLoad="findLocation();">
 		<div class="content">
-			<div onClick="submitLocation();" class="fluid-container white-bg">
-				<img src="img/Submit.png" class="center-block index-img">
+			<div id="loader" onClick="createMap();">Load page manually</div>
+			<div id="map"></div>
+			<div id="center-marker" class="hidden"></div>
+			<div id="mark-button" class="btn btn-success btn-large hidden" onClick="revealForm();">Mark location</div>
+
+			<div id="submit-form" class="hidden">
+				<div onClick="submitLocation();" class="fluid-container white-bg">
+					<img src="img/Submit.png" class="center-block index-img">
+				</div>
+				<div class="fluid-container red-bg">
+					<div id="notification" onClick="clearNotification();" class="alert">You shouldn't see this message!</div>
+					<h1>Optional info</h1>
+					<form>
+						<p>Scale:</p>
+						<input id="nameInput" type="text" placeholder="Sam's Cafe">
+						<p>Comments:</p>
+						<input id="commentInput" type="text" placeholder="Great wifi">
+					</form>
+				</div>
 			</div>
-			<div class="fluid-container red-bg">
-				<div id="notification" onClick="clearNotification();" class="alert">You shouldn't see this message!</div>
-				<h1>Optional info</h1>
-				<form>
-					<p>Scale:</p>
-					<input id="nameInput" type="text" placeholder="Sam's Cafe">
-					<p>Comments:</p>
-					<input id="commentInput" type="text" placeholder="Great wifi">
-				</form>
-			</div>
+
+
 		</div>
+		<!-- Scripts -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/gmaps.js"></script>
 		<script src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
 		<script src="js/mark.js"></script>
 	</body>

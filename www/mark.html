@@ -7,14 +7,16 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<title></title>
 	</head>
-	<body onLoad="findLocation();">
+	<body onLoad="startPage();">
 		<div class="content">
-			<div id="loader" onClick="createMap();">Load page manually</div>
-			<div id="map"></div>
-			<div id="center-marker" class="hidden"></div>
-			<div id="mark-button" class="btn btn-success btn-large hidden" onClick="revealForm();">Mark location</div>
+			<div id="loader" onClick="startPage();">Load page manually</div> <!-- Incase onLoad is not triggered automatically -->
+			<div id="map-container" class="hidden">
+				<div id="map"></div>
+				<div id="center-marker"></div>
+				<div id="mark-button" class="btn btn-success btn-large" onClick="revealForm();">Mark location</div>
+			</div>
 
-			<div id="submit-form" class="hidden">
+			<div id="form" class="hidden">
 				<div onClick="submitLocation();" class="fluid-container white-bg">
 					<img src="img/Submit.png" class="center-block index-img">
 				</div>

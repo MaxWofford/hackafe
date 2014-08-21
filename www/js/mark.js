@@ -83,7 +83,7 @@ function revealForm() {
 function submitLocation() {
   name = $('#nameInput').val();
   comment = $('#commentInput').val();
-  fb.push({name: name, comment: comment, lat: latitude, lng: longitude});
+  fb.push({name: name, comment: comment, position: latitude + "," + longitude});
 };
 
 //Triggered onLoad

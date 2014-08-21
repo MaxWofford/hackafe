@@ -6,21 +6,29 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<title></title>
 	</head>
-	<body>
+	<body onLoad="startPage();">
 		<div class="content">
-			<div class="fluid-container white-bg">
-				<img src="img/ResultsIcon.png" class="center-block index-img">
+			<div id="map-container" class="hidden">
+				<div id="map"></div>
+				<div id="center-marker"></div>
+				<div id="mark-button" class="btn btn-success btn-large" onClick="revealForm();">Mark location</div>
 			</div>
-				Nearby from your history
-			</h1><!-- List of nearby places from user history -->
-			<h1>
-				Good places nearby
-			</h1><!-- List of nearby places that are good -->
+			<!-- The rest of the page is loaded after the map is hidden -->
+			<div id="results" class="hidden">
+				<div class="fluid-container white-bg">
+					<img src="img/ResultsIcon.png" class="center-block index-img">
+				</div>
+					Nearby from your history
+				</h1><!-- List of nearby places from user history -->
+				<h1>
+					Good places nearby
+				</h1><!-- List of nearby places that are good -->
+			</div>
 		</div>
 	<!-- Scripts -->
 	<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js'></script>
-    <script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-    <script type="text/javascript" src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
-    <script type="text/javascript" src="find.js"></script>
+	<script type="text/javascript" src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+	<script type="text/javascript" src='https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js'></script>
+	<script type="text/javascript" src="find.js"></script>
 	</body>
 </html>

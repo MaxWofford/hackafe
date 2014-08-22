@@ -42,3 +42,26 @@ function findLocation() {
 	};
 };
 
+//Get cafes from firebase
+var cafeArray = [], results = d.results;
+function findCafes() {
+	fb.on('value', function (snapshot) {
+	  console.log(snapshot.val());
+	  cafes = JSON.stringify(snapshot.val());
+	}, function (errorObject) {
+	  console.log('The read failed: ' + errorObject.code);
+	});
+	for (var i = 0, len = results.length; i < len; i++) {
+		var result = results[i];
+		cafeArray.push({name: result.Name, comment: result.Comment, })
+	};
+	key = Object.keys(cafes.submit);
+};
+
+function startLoad() {
+	$('#loading-background').removeClass('hidden');
+};
+
+function endLoad() {
+	$('#loading-background').addClass('hidden');
+};

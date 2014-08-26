@@ -17,9 +17,6 @@ function updateLocation() {
 	longitude = map.getCenter().lng();
 };
 
-//Firebase initialization
-var fb = new Firebase("https://hackafe.firebaseio.com/submit/");
-
 //Notification bar
 function notifyAlert(notifyMessage) {
 	clearNotification();//Clear previous notification

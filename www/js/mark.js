@@ -49,13 +49,11 @@ function submitLocation() {
 };
 
 //Triggered onLoad
-function startPage() {
+function startPageSpecific() {
 	$('#loader').addClass('hidden');//Hide loader button
 	$('#map-container').removeClass('hidden');//Reveal map
-	findLocation();//Find user current location
 	generateMap(0,0);//Generate a map without waiting for coordinates
 	map.setZoom(21);
-
 };
 
 //Triggered when user presses 'mark location'

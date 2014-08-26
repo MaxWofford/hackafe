@@ -1,5 +1,2 @@
-//Anything onLoad goes here
-function startPage() {
-	startLoad();
-	findLocation();
+function startPageSpecific() {
 };

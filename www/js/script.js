@@ -1,4 +1,10 @@
 //Scripts that are in both find and mark pages
+function startPage() {
+	findLocation();
+	startPageSpecific()
+	endLoad();
+};
+
 function startLoad() {
 	$('#loading-background').removeClass('hidden');
 };
@@ -26,6 +32,7 @@ function success(pos) {
 	console.log('Your current position is:');
 	console.log('Latitude : ' + latitude);
 	console.log('Longitude: ' + longitude);
+	if ($('map')) {centerMap(latitude,longitude)};
 };
 
 function error(err) {

@@ -1,7 +1,16 @@
+//Scripts that are in both find and mark pages
+function startLoad() {
+	$('#loading-background').removeClass('hidden');
+};
+
+function endLoad() {
+	$('#loading-background').addClass('hidden');
+};
+
 var fb = new Firebase("https://hackafe.firebaseio.com/submit/");
 
-latitude = 0;
-longitude = 0;
+var latitude = 0;
+var longitude = 0;
 
 var options = {
 	enableHighAccuracy: true,

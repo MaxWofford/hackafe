@@ -12,11 +12,14 @@
 		<script type="text/javascript" src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
 		<script type="text/javascript" src="js/firebase.js"></script>
 		<script src="js/mark.js"></script>
-		<script type="text/javascript" src="js/geolocation.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
 		<title></title>
 	</head>
 	<body onLoad="startPage();">
 		<div class="content">
+			<div id="loading-background" class="hidden">
+				<div id="loading-animation"></div>
+			</div>
 			<div id="loader" onClick="startPage();">Load page manually</div> <!-- Incase onLoad is not triggered automatically -->
 			<div id="map-container" class="hidden">
 				<div id="map"></div>

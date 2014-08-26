@@ -1,38 +1,3 @@
-latitude = 0;
-longitude = 0;
-
-//Geolocation options and callbacks
-var options = {
-	enableHighAccuracy: true,
-	timeout: 50000, // While localhosting this is set to 50000
-	maximumAge: 0
-};
-
-function success(pos) {
-	console.log('finding location')
-	var crd = pos.coords;
-	latitude = crd.latitude;
-	longitude = crd.longitude;
-	console.log('Your current position is:');
-	console.log('Latitude : ' + latitude);
-	console.log('Longitude: ' + longitude);
-	centerMap(latitude,longitude);
-};
-
-function error(err) {
-	console.warn('ERROR(' + err.code + '): ' + err.message);
-	$('#notification').removeClass('hidden').text('ERROR(' + err.code + '): ' + err.message);
-};
-
-//Geolocation function
-function findLocation() {
-	if ("geolocation" in navigator) {
-		navigator.geolocation.getCurrentPosition(success, error, options);
-	} else{//Geolocation not in navigator
-		notifyAlert('Geolocation not found in navigator');
-	};
-};
-
 //Map related functions
 function generateMap(lat,lng) {
 	map = new GMaps({
@@ -101,3 +66,19 @@ function markPressed() {
 	updateLocation();
 	revealForm();
 }
+
+/*function showLocations() {
+	for (var i = locations.length - 1; i >= 0; i--) {
+		map.addMarker({
+  		lat: -12.043333,
+  		lng: -77.028333,
+  		title: 'Lima',
+  		click: function(e) {
+    alert('You clicked in this marker');
+    infoWindow: {
+  		content: '<p>HTML Content</p>'
+	}
+  	}
+		});
+	};
+}*/

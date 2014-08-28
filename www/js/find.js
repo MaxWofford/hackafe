@@ -1,6 +1,7 @@
 var results = []
 
 function startPageSpecific() {
+	snapshotFirebase(5);
 };
 
 Math.toRad = function(radians) {
@@ -15,9 +16,7 @@ function coordsToKilometers (locLat, locLng) {
 	var d = Math.toRad(locLat-latitude);
 	var e = Math.toRad(locLng-longitude);
 
-	var f = Math.sin(d/2) * Math.sin(d/2) +
-		Math.cos(b) * Math.cos(c) *
-		Math.sin(e/2) * Math.sin(e/2);
+	var f = Math.sin(d/2) * Math.sin(d/2) + Math.cos(b) * Math.cos(c) * Math.sin(e/2) * Math.sin(e/2);
 	var g = 2 * Math.atan2(Math.sqrt(f), Math.sqrt(1-f));
 
 	var h = a * g;

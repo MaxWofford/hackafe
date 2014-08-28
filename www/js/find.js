@@ -4,7 +4,7 @@ function startPageSpecific() {
 };
 
 Math.toRad = function(radians) {
-  return (radians * Math.PI/180);
+	return (radians * Math.PI/180);
 };
 
 function coordsToKilometers (locLat, locLng) {
@@ -16,13 +16,17 @@ function coordsToKilometers (locLat, locLng) {
 	var e = Math.toRad(locLng-longitude);
 
 	var f = Math.sin(d/2) * Math.sin(d/2) +
-        Math.cos(b) * Math.cos(c) *
-        Math.sin(e/2) * Math.sin(e/2);
+		Math.cos(b) * Math.cos(c) *
+		Math.sin(e/2) * Math.sin(e/2);
 	var g = 2 * Math.atan2(Math.sqrt(f), Math.sqrt(1-f));
 
 	var h = a * g;
 	console.log(h);
-	return h
+	return h;
+}
+
+function kilometersToMiles(kilometers) {
+	return 0.621371 * kilometers;
 }
 
 function snapshotFirebase(proximity) {

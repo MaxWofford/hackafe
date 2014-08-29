@@ -24,7 +24,7 @@ var options = {
 };
 
 function success(pos) {
-	console.log('finding location')
+	console.log('finding location');
 	var crd = pos.coords;
 	latitude = crd.latitude;
 	longitude = crd.longitude;

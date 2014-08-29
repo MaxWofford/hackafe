@@ -1,7 +1,7 @@
 var results = [];
-
+var proximity = 5;
 function startPageSpecific() {
-	snapshotFirebase(100); //Debugging geolocation is difficult with proxies
+	snapshotFirebase(1000); //Debugging geolocation is difficult with proxies
 };
 
 Math.toRad = function(radians) {
@@ -24,7 +24,7 @@ function kilometersToMiles(kilometers) {
 	return 0.621371 * kilometers;
 }
 
-function snapshotFirebase(proximity) {
+function snapshotFirebase() {
 	fb.on('value', function (snapshot) {
 		for (var location in snapshot.val()) {
 			locLat = snapshot.val()[location].position.split(',')[0];
@@ -43,6 +43,7 @@ function snapshotFirebase(proximity) {
 };
 
 function displayList(results){
+	$('#nearby').empty();
 	for (var location in results) {
 		var listDist = Math.ceil(results[location].split(':')[0]* 100) / 100;
 		console.log(listDist);
@@ -55,4 +56,10 @@ function displayList(results){
 		document.getElementById('nearby').appendChild(newDiv);
 	}
 	endLoad();
+}
+
+function extendProximity() {
+	startLoad();
+	proximity += 5;
+	snapshotFirebase();
 }

@@ -54,6 +54,7 @@ function startPageSpecific() {
 	$('#map-container').removeClass('hidden');//Reveal map
 	generateMap(0,0);//Generate a map without waiting for coordinates
 	map.setZoom(21);
+	endLoad();
 };
 
 //Triggered when user presses 'mark location'

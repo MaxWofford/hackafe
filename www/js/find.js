@@ -38,14 +38,13 @@ function snapshotFirebase(proximity) {
 		displayList(results);
 		}, function (errorObject) {
 		console.warn('The read failed: ' + errorObject.code);
+		endLoad();
 	});
 };
 
 function displayList(results){
-	//History is 0 for new and 1 for previously visited
 	for (var location in results) {
 		var listDist = Math.ceil(results[location].split(':')[0]* 100) / 100;
-		//$('#nearby').append($div);
 		console.log(listDist);
 		var newDiv = document.createElement('div');
 		var name = document.createElement('p');
@@ -55,4 +54,5 @@ function displayList(results){
 		newDiv.insertBefore(name, newDiv.firstChild);
 		document.getElementById('nearby').appendChild(newDiv);
 	}
+	endLoad();
 }

@@ -1,8 +1,7 @@
 //Scripts that are in both find and mark pages
 function startPage() {
 	findLocation();
-	startPageSpecific()
-	endLoad();
+	startPageSpecific();
 };
 
 function startLoad() {

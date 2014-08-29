@@ -51,7 +51,7 @@ function displayList(results){
 		var name = document.createElement('p');
 		newDiv.innerHTML = listDist + 'km';
 		name.innerHTML = 'cake';
-
+		newDiv.appendChild(document.createElement('hr'));
 		newDiv.insertBefore(name, newDiv.firstChild);
 		document.getElementById('nearby').appendChild(newDiv);
 	}

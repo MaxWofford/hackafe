@@ -96,4 +96,8 @@ button:hover {
 	margin-left: 1.5em;
 	margin-right: 1.5em;
 	font-size: 4rem;
+	color: rgba(0,0,0,0.5);
+}
+#nearby p {
+	color: rgba(0,0,0,0.85);
 }

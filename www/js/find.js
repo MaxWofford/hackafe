@@ -1,8 +1,7 @@
 var results = [];
 
 function startPageSpecific() {
-	snapshotFirebase(100000); //Debugging geolocation is difficult with proxies
-	displayList(results);
+	snapshotFirebase(100); //Debugging geolocation is difficult with proxies
 };
 
 Math.toRad = function(radians) {
@@ -36,7 +35,8 @@ function snapshotFirebase(proximity) {
 				results.push(dist + ':' + snapshot.val()[location].position);
 			};
 		}
-	}, function (errorObject) {
+		displayList(results);
+		}, function (errorObject) {
 		console.warn('The read failed: ' + errorObject.code);
 	});
 };

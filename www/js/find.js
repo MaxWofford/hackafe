@@ -2,6 +2,7 @@ var results = [];
 
 function startPageSpecific() {
 	snapshotFirebase(100000); //Debugging geolocation is difficult with proxies
+	displayList(results);
 };
 
 Math.toRad = function(radians) {
@@ -41,10 +42,17 @@ function snapshotFirebase(proximity) {
 };
 
 function displayList(results){
+	//History is 0 for new and 1 for previously visited
 	for (var location in results) {
-		var $div = $("<div>");
-		var listDist = results[location].split(':')[0];
-		$div.text(listDist);
-		$('#nearby').append($div);
+		var listDist = Math.ceil(results[location].split(':')[0]* 100) / 100;
+		//$('#nearby').append($div);
+		console.log(listDist);
+		var newDiv = document.createElement('div');
+		var name = document.createElement('p');
+		newDiv.innerHTML = listDist + 'km';
+		name.innerHTML = 'cake';
+
+		newDiv.insertBefore(name, newDiv.firstChild);
+		document.getElementById('nearby').appendChild(newDiv);
 	}
 }

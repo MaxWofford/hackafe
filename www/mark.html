@@ -5,9 +5,11 @@
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/radios-to-slider.min.css">
 		<!-- Scripts -->
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/jquery.radios-to-slider.js"></script>
 		<script type="text/javascript" src="js/gmaps.js"></script>
 		<script type="text/javascript" src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
 		<script type="text/javascript" src="js/firebase.js"></script>
@@ -20,29 +22,42 @@
 			<div id="loading-background" class="">
 				<div id="loading-animation"></div>
 			</div>
-			<div id="loader" onClick="startPage();">Load page manually</div> <!-- Incase onLoad is not triggered automatically -->
+			<div id="loader" onClick="startPage();">Load page manually</div>
+			<!-- Incase onLoad is not triggered automatically -->
 			<div id="map-container" class="hidden">
 				<div id="map"></div>
 				<div id="center-marker"></div>
 				<div id="mark-button" class="btn btn-success btn-large" onClick="revealForm();">Mark location</div>
 			</div>
-
-			<div id="form" class="hidden">
-				<div onClick="submitLocation();" class="fluid-container white-bg">
-					<img src="img/Submit.png" class="center-block index-img">
-				</div>
-				<div class="fluid-container red-bg">
-					<div id="notification" onClick="clearNotification();" class="alert">You shouldn't see this message!</div>
-					<h1>Optional info</h1>
-					<form>
-						<p>Scale:</p>
-						<input id="nameInput" type="text" placeholder="Sam's Cafe">
-						<p>Comments:</p>
-						<input id="commentInput" type="text" placeholder="Great wifi">
-					</form>
-				</div>
+			<div id="form-white" onClick="submitLocation();" class="fluid-container white-bg hidden">
+				<img src="img/Submit.png" class="center-block index-img">
 			</div>
-
+			<div id="form-red" class="fluid-container red-bg hidden">
+				<div id="notification" onClick="clearNotification();" class="alert">You shouldn't see this message!</div>
+				<h1>Optional info</h1>
+				<form>
+					<p>Rating:</p>
+					<!-- <div class="slider">
+															<div id="slider"></div>
+					</div> -->
+					<div id="radios">
+						<input id="option1" name="options" type="radio">
+						<input id="option2" name="options" type="radio">
+						<input id="option3" name="options" type="radio" checked>
+						<input id="option4" name="options" type="radio">
+						<input id="option5" name="options" type="radio">
+					</div>
+					<br>
+					<input id="nameInput" type="text" placeholder="Sam's Cafe">
+				</form>
+			</div>
+			<div class="success-banner hidden">
+			<!-- Credit for great clean checkmark: http://codepen.io/anon/pen/pvEWNG -->
+			<svg class="checkmark" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="90.594px" height="59.714px" viewBox="0 0 90.594 59.714" enable-background="new 0 0 90.594 59.714" xml:space="preserve">
+			<polyline class="check" fill="none" stroke="#FF0A0A" stroke-width="5" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768"/>
+			</svg>
+			</div>
 		</div>
 	</body>
+	<a href="index.html" class="hidden" id="home-link"></a>
 </html>

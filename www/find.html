@@ -4,12 +4,12 @@
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!-- Scripts -->
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
-	<script type="text/javascript" src="js/firebase.js"></script>
-	<script type="text/javascript" src="js/find.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+		<!-- Scripts -->
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="https://cdn.firebase.com/js/client/1.0.19/firebase.js"></script>
+		<script type="text/javascript" src="js/firebase.js"></script>
+		<script type="text/javascript" src="js/find.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
 		<title></title>
 	</head>
 	<body onLoad="startPage();">
@@ -20,16 +20,25 @@
 			<div class="fluid-container white-bg">
 				<img src="img/ResultsIcon.png" class="center-block index-img">
 			</div>
-				Nearby from your history
-			</h1><!-- List of nearby places from user history -->
-			<div id="history"></div>
-			<h1>
-				Good places nearby
-			</h1><!-- List of nearby places that are good -->
+			<br>
+			<!-- <h1>
+			Good places nearby
+			</h1> --><!-- List of nearby places that are good -->
 			<div id="nearby">
-				<div><p>Sam's Cafe</p>2413.6940462743214 km<hr></div>
-		</div>
-		<div><h3 onClick="extendProximity()">Extend search range</h3></div>
+				<li class="list-group-item">
+					<h3>Sam's Cafe</h3><p>0.3 mi</p>
+				</li>
+				<li class="list-group-item">
+					<h3>Sam's Cafe</h3><p>0.3 mi</p>
+				</li>
+				<li class="list-group-item">
+					<h3>Sam's Cafe</h3><p>0.3 mi</p>
+				</li>
+				<li class="list-group-item">
+					<h3>Sam's Cafe</h3><p>0.3 mi</p>
+				</li>
+			</div>
+			<div><h3 onClick="extendProximity()">Extend search range</h3></div>
 		</div>
 	</body>
 </html>

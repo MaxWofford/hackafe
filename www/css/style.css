@@ -70,7 +70,7 @@ button:hover {
 }
 #mark-button {
 	position: fixed;
-	font-size: 72px;
+	font-size: 3em;
 	bottom: 0%;
 	width: 100%;
 }

@@ -46,8 +46,8 @@ function revealForm() {
 //Triggered when user clicks the final submit button
 function submitLocation() {
     var rating = getRating() || '';
-    var name = $('#nameInput').val() || '';
-    var comment = $('#commentInput').val() || '';
+    var name = $('#name-input').val() || '';
+    var comment = $('#comment-input').val() || '';
     fb.push({
         name: name,
         comment: comment,

@@ -50,8 +50,12 @@ function displayList(results){
 		var newDiv = document.createElement('div');
 		var name = document.createElement('p');
 		newDiv.innerHTML = listDist + 'km';
-		name.innerHTML = 'cake';
-		newDiv.appendChild(document.createElement('hr'));
+		name.innerHTML = results[location].name || 'Anon Cafe';
+		newDiv.className = 'list-group-item';
+		// console.log(results[location].split(':')[1].split(',')[0]);
+		var lat = results[location].split(':')[1].split(',')[0]
+		var lng = results[location].split(':')[1].split(',')[1]
+		newDiv.attr('onClick', 'console.log(\'cake\')')
 		newDiv.insertBefore(name, newDiv.firstChild);
 		document.getElementById('nearby').appendChild(newDiv);
 	}
@@ -63,3 +67,16 @@ function extendProximity() {
 	proximity += 5;
 	snapshotFirebase();
 }
+
+function directionsGmaps(lat,lng,search) {
+	var url = 'https://www.google.com/maps/search/' + search + '/@' + lat + ',' + lng + ',17z'
+	console.info(url)
+	$('#directions-link').attr('href', url)
+}
+
+setTimeout(function(){
+	console.info('something is not right');
+	var message = document.createElement('p')
+	message.innerText = 'Something is not right...'
+	// $('loading-background')[0].appendChild
+}, 500)

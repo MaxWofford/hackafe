@@ -118,3 +118,10 @@ button:hover {
     left: 50%;
     margin: 0 0 0 -50%;
 }
+#form-red {
+	color: white;
+}
+.margin-center {
+	margin-right: auto;
+	margin-left: auto;
+}
